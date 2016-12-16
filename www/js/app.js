@@ -10,6 +10,12 @@ angular.module('shato', [
   'shato.services.bt'
 ])
 
+.constant('$ionicLoadingConfig', {
+  template: '<ion-spinner class="spinner-light" icon="spiral"></ion-spinner>',
+  noBackdrop: true,
+  hideOnStateChange: true
+})
+
 .run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
