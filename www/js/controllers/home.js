@@ -17,6 +17,7 @@ angular.module('shato.controllers.home', [])
       close: 'D010'
     }
   };
+  $scope.timeout = {};
 
   // Scan and connect to Shato
   $scope.connect = function() {
@@ -36,7 +37,7 @@ angular.module('shato.controllers.home', [])
 
       // Scan for remote device
       .then(function() {
-        return bt.scan([$scope.service], 10);
+        return bt.scan([$scope.service], 5);
       })
 
       // Connect to device
@@ -65,12 +66,19 @@ angular.module('shato.controllers.home', [])
 
   // Turn on and off a char
   $scope.toggle = function(char, on, cutoff) {
+    // console.log(char, on, cutoff);
+
+    // Clear the previous timeout
+    $timeout.cancel($scope.timeout[char]);
+
     // Automatically turn off after sec to protect the device
     if (cutoff) {
-      $timeout(function() {
+      $scope.timeout[char] = $timeout(function() {
         $scope.toggle(char, 0);
       }, cutoff * 1000);
     }
+
+    // Send command to device
     return bt
       .write($scope.device.id, $scope.service, char, on ? 't' : 'f')
       .then(function(data) { })
