@@ -25,18 +25,18 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   display: none !important;
 }
 
-$dark: #2a2a2a;
+$grey: #EDEEED;
 
 body {
-  background: $dark;
+  background: $grey;
 }
 
 ion-view {
-  background: $dark;
+  background: $grey;
 }
 
 ion-content {
-  background: $dark;
+  background: $grey;
 }
 
 .loading-container .loading {
