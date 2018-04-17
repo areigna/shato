@@ -65,6 +65,9 @@
     </platform>
     <icon src="resources/ios/icon/icon-small@3x.png" />
     <engine name="ios" spec="^4.4.0" />
+    <plugin name="cordova-plugin-ble-central" spec="^1.1.4">
+        <variable name="BLUETOOTH_USAGE_DESCRIPTION" value="Shato" />
+    </plugin>
     <plugin name="cordova-plugin-ionic-webview" spec="^1.2.0" />
     <plugin name="cordova-plugin-statusbar" spec="git+https://github.com/apache/cordova-plugin-statusbar.git" />
 </widget>
