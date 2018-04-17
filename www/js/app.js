@@ -11,7 +11,7 @@ angular.module('shato', [
 ])
 
 .constant('$ionicLoadingConfig', {
-  template: '<ion-spinner class="spinner-light" icon="spiral"></ion-spinner>',
+  template: '<ion-spinner class="spinner-dark" icon="spiral"></ion-spinner>',
   noBackdrop: true,
   hideOnStateChange: true
 })
